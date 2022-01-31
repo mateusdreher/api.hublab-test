@@ -4,7 +4,7 @@ export class Database {
     connect(connectionString: string) {
         console.log('Connecting database...')
         mongoose.connect(connectionString)
-        .then((data) => {
+        .then(() => {
             console.log('Connect database successfully')
         })
         .catch((error) => {

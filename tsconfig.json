@@ -12,12 +12,13 @@
       "strict": true,                                        
       "baseUrl": "src",                       
       "paths": {
-        "@entities/*": ["entities/*"],
-        "@repositories/*": ["repositories/*"],
+        "@models/*": ["database/models/*"],
         "@controllers/*": ["controllers/*"],
         "@middlewares/*": ["middlewares/*"],
         "@database/*": ["database/*"],
-        "@enums/*": ["enums/*"]
+        "@enums/*": ["enums/*"],
+        "@intefaces/*": ["interfaces/*"],
+        "@dtos/*": ["dtos/*"]
     },                            
       "esModuleInterop": true,                  
       "forceConsistentCasingInFileNames": true ,
