@@ -14,7 +14,7 @@
       "paths": {
         "@models/*": ["database/models/*"],
         "@controllers/*": ["controllers/*"],
-        "@middlewares/*": ["middlewares/*"],
+        "@middlewares/*": ["src/middlewares/*"],
         "@database/*": ["database/*"],
         "@enums/*": ["enums/*"],
         "@intefaces/*": ["interfaces/*"],
