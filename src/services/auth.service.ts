@@ -1,7 +1,7 @@
-import { UserRepository } from "repositories/user.repository";
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
 import { IRepository } from "@intefaces/repository.interface";
+import * as authData from '../../auth.json';
 
 export class AuthService {
     constructor(private repoository: IRepository) {}
@@ -21,7 +21,7 @@ export class AuthService {
     }
 
     generateToken(user_id: string) {
-        return jwt.sign({id: user_id}, process.env.SECRET || '', {
+        return jwt.sign({id: user_id}, process.env.SECRET || authData.secret, {
             expiresIn: 3600
         });
 
