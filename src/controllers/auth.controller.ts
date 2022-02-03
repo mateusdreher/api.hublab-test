@@ -22,8 +22,7 @@ export class AuthController {
             return response.json({token: serviceReturn});
         }
         catch(error) {
-            console.log(error);
-            response.status(400).json({error});
+            return response.status(400).json({error});
         }
        
     }
