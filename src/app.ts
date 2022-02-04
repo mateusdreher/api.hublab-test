@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 import { authRouter } from 'routes/auth.routes';
 import { mainRouter } from 'routes/main.routes';
 import { userRouter } from 'routes/user.routes';
+import { roomRouter } from 'routes/room.routes';
 
 const app: express.Application = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/', mainRouter);
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
+app.use('/room', roomRouter);
 
 new Database().connect(process.env.DB_CONNECTION_STRING || '');
 
