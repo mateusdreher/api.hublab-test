@@ -2,7 +2,7 @@ import { UserRepository } from "repositories/user.repository";
 import { UserService } from "services/user.service";
 import { Request, Response } from 'express';
 
-export class UserrController {
+export class UserController {
     private userService: UserService;
 
     constructor () {

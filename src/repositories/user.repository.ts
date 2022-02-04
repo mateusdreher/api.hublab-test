@@ -3,10 +3,10 @@ import { UserCreateDto } from '@dtos/user/user-create.dto';
 import { UserResponseDto } from '@dtos/user/user-response.dto';
 import { UserUpdateDto } from '@dtos/user/user-update.dto';
 import { IRepository } from '@intefaces/repository.interface';
-import UserModel from 'models/user.model';
+import userModel from 'models/user.model';
 
 export class UserRepository implements IRepository {
-    private model = UserModel;
+    private model = userModel;
 
     constructor() {}
 
@@ -23,7 +23,13 @@ export class UserRepository implements IRepository {
         let query: IQuery = {};        
         query[field] = value;
 
-        return await UserModel.findOne(query);
+        return await userModel.findOne(query);
+    }
+    async findMany(field: string, param: any): Promise<UserResponseDto[]> {
+        let query: IQuery = {};        
+        query[field] = param;
+
+        return await this.model.find(query);
     }
     async findAll(): Promise<UserResponseDto[] | undefined> {
         return await this.model.find();
