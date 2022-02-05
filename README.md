@@ -83,3 +83,5 @@ A api funciona no protocoolo REST com os seguintes endpoints:
     * `GET`: Retorna todas as salas existentes no banco
 
 
+* Para uma utilização visual, e para utilizar as funções de chat
+	* Acesse o frontend: https://github.com/mateusdreher/app.hublab-test
