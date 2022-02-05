@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "target": "es2017",                          
+      "module": "commonjs",                     
+      "outDir": "./dist",
+      "rootDirs": [
+        "./",
+        "./dist"
+      ],
+      "removeComments": true,                            
+      "strictPropertyInitialization": false,
+      "strict": true,                                        
+      "baseUrl": "src",                       
+      "paths": {
+        "@models/*": ["database/models/*"],
+        "@controllers/*": ["controllers/*"],
+        "@middlewares/*": ["src/middlewares/*"],
+        "@database/*": ["database/*"],
+        "@enums/*": ["enums/*"],
+        "@intefaces/*": ["interfaces/*"],
+        "@dtos/*": ["dtos/*"]
+    },                            
+      "esModuleInterop": true,                  
+      "forceConsistentCasingInFileNames": true ,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "resolveJsonModule": true
+    }
+}
