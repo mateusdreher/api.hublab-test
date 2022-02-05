@@ -17,7 +17,8 @@ export function socketConnect(io: Server) {
         }
         else {
             console.log(`${userName} conectado a sala ${sentRoom}`);
-            
+            io.sockets.emit('newUser', userName);
+
             const room: RoomDto = await new RoomService(new RoomRepository()).getRoom(sentRoom);
             socket.join(room.name);
             socket.to(room.name).emit(`${userName} e conectou a sala ${room.name}`);
@@ -34,6 +35,10 @@ export function socketConnect(io: Server) {
                 // Envia para todos os sockets conectados
                 socket.broadcast.emit('receivedMessage', data); 
             });
+
+            socket.on('disconnecting', (reason) => {
+                io.sockets.emit('disconnectedUser', userName)
+            })
         }
         
     });

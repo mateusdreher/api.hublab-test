@@ -19,7 +19,7 @@ export class AuthController {
     
             const serviceReturn = await this.authService.auth(email, password);
     
-            return response.json({token: serviceReturn});
+            return response.json(serviceReturn);
         }
         catch(error) {
             return response.status(400).json({error});

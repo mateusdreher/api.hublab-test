@@ -8,7 +8,11 @@ dotenv.config();
 const PORT = process.env.API_PORT || 5000;
 const httpServer = createServer(app);
 
-const io = new Server(httpServer, {});
+const io = new Server(httpServer, {
+    cors: {
+        origin: '*'
+    }
+});
 
 try {
     socketConnect(io);

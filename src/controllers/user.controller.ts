@@ -12,7 +12,6 @@ export class UserController {
     async create(request: Request, response: Response) {
         try {
             const { email, password, name } = request.body;
-
             if (!email || !password || !name) {
                 throw 'Invalid payload'
             }
@@ -22,6 +21,7 @@ export class UserController {
             return response.json({message: 'User created succesfully', user: ret});
         }
         catch(error) {
+            console.log(error)
             return response.status(400).json({error});
         }
     }

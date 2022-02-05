@@ -17,9 +17,9 @@ export class RoomController {
                 throw 'Invalid payload'
             }
 
-            const ret = await this.roomService.createRoom(name);
+            const room = await this.roomService.createRoom(name);
             
-            return response.json({message: 'Room created successfully', room: ret});
+            return response.json({message: 'Room created successfully', room});
         }
         catch(error) {
             return response.status(400).json({error});
@@ -29,9 +29,9 @@ export class RoomController {
     async getAll(request: Request, response: Response) {
         try {
 
-            const ret = await this.roomService.getRooms();
+            const rooms = await this.roomService.getRooms();
             
-            return response.json({rooms: ret});
+            return response.json(rooms);
         }
         catch(error) {
             return response.status(400).json({error});

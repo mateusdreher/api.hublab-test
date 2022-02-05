@@ -11,9 +11,9 @@ export class UserService {
         if (emailAlreadyExists) {
             throw 'Email already exists'
         }
-        
-        dto.password = await bcrypt.hash(dto.password, process.env.SALT_ROUNDS || authData.salt_rounds);
-
+        const salt = process.env.SALT_ROUNDS ? parseInt(process.env.SALT_ROUNDS) : authData.salt_rounds;
+        dto.password = await bcrypt.hash(dto.password, salt);
+        console.log(dto.password)
         return await this.repository.create(dto);
     }
 }

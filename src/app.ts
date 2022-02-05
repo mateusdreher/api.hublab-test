@@ -10,9 +10,11 @@ import { roomRouter } from 'routes/room.routes';
 const app: express.Application = express();
 
 dotenv.config();
-
-app.use(cors());
-app.options('*', cors);
+// app.options('*', cors);
+const allowedOrigins = ['http://loocalhost:4200']
+app.use(cors({
+    origin: '*'
+}));
 app.use(express.json());
 
 app.use('/', mainRouter);

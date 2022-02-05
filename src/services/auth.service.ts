@@ -17,7 +17,9 @@ export class AuthService {
             throw 'Password is invalid'
         }
 
-        return this.generateToken(user._id);
+        const token = this.generateToken(user._id);
+
+        return { token, user: user.name };
     }
 
     generateToken(user_id: string) {
