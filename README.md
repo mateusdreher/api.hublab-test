@@ -30,6 +30,14 @@ Para rodar a api localmente é necessário:
 
 Pronto! A api estará rodando na porta padrão (3000) ou na porta que você configurou o .env (caso o tenha modificado)
 
+Quando a api é inciada, é criado um usuário de testes para a api:  
+```
+  {
+	  "email": "cleitonbomdeguerra@olimpus.com",
+	  "password": "ihatezeus123"
+  } 
+```
+
 ## Utilizando a api
 A api funciona no protocoolo REST com os seguintes endpoints:
   *OBS:* _É necessário a utilização de um Bearer token no header de autenticação em alguns endpoints_
