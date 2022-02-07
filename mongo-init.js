@@ -16,3 +16,8 @@ db.users.insert({
   "email": "cleitonbomdeguerra@olimpus.com",
   "password": "$2b$10$YH18sgXQFxVCtX1tBCM8NOgPKsL4wglAwNxMSUXuYYsaxe4Fdzdru" //ihatezeus123
 });
+
+db.createCollection('rooms')
+db.rooms.insert({
+  "name": "Olympus"
+});
