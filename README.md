@@ -30,7 +30,7 @@ Para rodar a api localmente é necessário:
 
 Pronto! A api estará rodando na porta padrão (3000) ou na porta que você configurou o .env (caso o tenha modificado)
 
-Quando a api é inciada, é criado um usuário de testes para a api:  
+Quando a api é inciada, é criado um usuário de testes para a api e também uma sala (Olympus) que pode ser vista no fron na tela de 'join room': 
 ```
   {
 	  "email": "cleitonbomdeguerra@olimpus.com",
