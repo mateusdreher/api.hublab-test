@@ -11,6 +11,12 @@ export class UserService {
         if (emailAlreadyExists) {
             throw 'Email already exists'
         }
+
+        const userAlreadyExists = await this.repository.findOne('name', dto.name);
+        if (userAlreadyExists) {
+            throw 'Username already exists'
+        }
+
         const salt = process.env.SALT_ROUNDS ? parseInt(process.env.SALT_ROUNDS) : authData.salt_rounds;
         dto.password = await bcrypt.hash(dto.password, salt);
         console.log(dto.password)
